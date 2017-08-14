@@ -1,0 +1,39 @@
+- counter1 = [1,2,3,4]; counter2 = [5,6,7]; tdwidth = [71,95,73,82,66,102,80]
+- itemsuniv = ["CUISINE", "ENTRETIEN &<br />RANGEMENT", "SANTE &<br />BEAUTE", "MAISON &<br />DECO", "LOISIRS", "VETEMENTS &<br />ACCESSOIRES", "BONNES<br />AFFAIRES"]
+tr
+  td
+    table border="0" cellpadding="0" cellspacing="0"
+      tr
+        td.mob_d_b valign="middle" height="42"
+          table.mobile_320 border="0" cellpadding="0" cellspacing="0"
+            tr
+              - cp=0
+              - counter1.each {|i|
+              td.mob_25.pdt-8.pdb-8.nav width==("#{tdwidth[i-1]}") align="center"
+                a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank"
+                  == "#{itemsuniv[i-1]}"
+              - if cp <= 2
+                td width="7"
+              - else
+                td.mob_d_none width="7"
+              -cp += 1
+              - }
+        td.mob_d_b valign="middle"
+          table.mobile_320 border="0" cellpadding="0" cellspacing="0"
+            tr
+              - cp=0
+              - counter2.each {|i|
+              - if cp <= 1
+                td.mob_33.pdt-8.pdb-8.nav width==("#{tdwidth[i-1]}") align="center"
+                  a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank"
+                    == "#{itemsuniv[i-1]}"
+                - if cp <= 0
+                  td width="7"
+                - if cp == 1
+                 td width="8"
+              - else
+                td.mob_33.pdt-8.pdb-8.nav-ba width==("#{tdwidth[i-1]}") align="center"
+                  a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank"
+                    == "#{itemsuniv[i-1]}"
+              -cp += 1
+              - }

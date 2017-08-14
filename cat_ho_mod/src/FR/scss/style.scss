@@ -1,9 +1,16 @@
 .vam { vertical-align: middle; }
 .nav {
   @extend .vam;
-  line-height: normal; font-size: 12px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;
+  line-height: normal; font-size: 12px; font-weight: normal; font-family: Arial, Helvetica, sans-serif;
   background-color: #F9D5E1;
+  border-radius: 3px;
 }
-.nav a { color: #FF0066; }
-.pdt-8 { padding-top: 8px; }
-.pdb-8 { padding-bottom: 8px;}
+.nav-ba {
+  @extend .nav;
+   font-weight: bold;
+  background-color: #FFFF00;
+}
+
+.nav a { color: #FF0066; text-decoration: none; }
+.pdt-8 { padding-top: 6px; }
+.pdb-8 { padding-bottom: 6px;}

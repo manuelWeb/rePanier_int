@@ -1,37 +1,9 @@
-- counter1 = [1,2,3,4]; counter2 = [5,6,7];
-- tdwidth = [71,95,73,82,66,102,80]
-- itemsuniv = ["CUISINE", "ENTRETIEN &<br />RANGEMENT", "SANTE &<br />BEAUTE", "MAISON &<br />DECO", "LOISIRS", "VETEMENTS &<br />ACCESSOIRES", "BONNES<br />AFFAIRES"]
-- univpath  = ["cd-chansons-lyrique","cd-instrumental-folklore-ambiance","dvd-cinema","dvd-tv","dvd-spectacles","hi-fi-livres"]
-
-table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" bgcolor="#E1E1E1" align="center" style="margin: 0 auto;"
+table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   tr
-    td.mob_d_none width="12" bgcolor="#FF1493" valign="top"
-    td valign="top"
+    td.mob_d_none width="12" bgcolor="#FF1493"
+    td
       table border="0" cellpadding="0" cellspacing="0"
-        tr
-
-          td.mob_d_b valign="top"
-            table.mobile_320 border="0" cellpadding="0" cellspacing="0"
-              tr
-                - counter1.each {|i|
-                td.mob_25.pdt-8.pdb-8.nav width==("#{tdwidth[i-1]}") height="30" align="center" valign="top"
-                  a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank" style="text-decoration: none; "
-                    == "#{itemsuniv[i-1]}"
-                td valign="top" width="7"
-                - }
-                  
-          td.mob_d_b valign="top"
-            table.mobile_320 border="0" cellpadding="0" cellspacing="0"
-              tr
-                - cp=0
-                - counter2.each {|i|
-                td.mob_33.nav width==("#{tdwidth[i-1]}") height="30" align="center" valign="top"
-                  a href==("#{$link}forme-bien-etre/Univers.html?utm_source=NL&utm_medium=email&utm_content=univers"+$utm[3]+$utmtxt[2]) target="_blank" style="text-decoration: none; color: #171926;"
-                    == "#{itemsuniv[i-1]}"
-                - if cp <= 1 
-                  td valign="top" width="7"
-                    == cp
-                  -cp+=1
-                - }
-
-    td.mob_d_none width="12" bgcolor="#FF1493" valign="top"
+        == Slim::Template.new('./src/FR/partial/_logocpt.slim').render
+        == Slim::Template.new('./src/FR/partial/_nav.slim').render
+        
+    td.mob_d_none width="12" bgcolor="#FF1493"
