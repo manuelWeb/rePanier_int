@@ -11,6 +11,21 @@
   background-color: #FFFF00;
 }
 
+
+@mixin pdt($val) {
+  padding-top: $val + px;
+}
+@mixin pdr($val) {
+  padding-right: $val + px;
+}
+@mixin pdb($val) {
+  padding-bottom: $val + px;
+}
+@mixin pdl($val) {
+  padding-left: $val + px;
+}
+.pdt16 {@include pdt(16)}
+.pdb16 {@include pdb(16)}
 .nav a { color: #FF0066; text-decoration: none; }
 .pdt-8 { padding-top: 6px; }
 .pdb-8 { padding-bottom: 6px;}
