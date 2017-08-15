@@ -1,0 +1,21 @@
+table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
+  tr
+    td.mob_d_none width="12" bgcolor="#FF1493"
+    td
+      table border="0" cellpadding="0" cellspacing="0"
+        tr
+          td.bgcf.mob_d_b.pdb16 valign="middle"
+            table.mobile_320 border="0" cellpadding="0" cellspacing="0"
+              tr
+                / desk device : padding-left: 4 column + 4 gutter
+                / (208 pad + 196 logo = )
+                td.mob_nopd align="left" style="padding-left: #{$column*4+$gutter*4}px;"
+                  a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank"
+                   img src==(($abspath == true ? $srcAbs : $srcRel)+"s1c1_logo.jpg") alt=""
+                / desk device : ( 116 pad + 92 cpt = 208)
+                td.mob_nopd width==($column*2+$gutter*1) align="left" style="padding-left: #{$column*2+$gutter*3}px;"
+                  a href==("#{$link}forme-bien-etre/Univers.html?") target="_blank"
+                   img src==(($abspath == true ? $srcAbs : $srcRel)+"s1c2_cpt.jpg") alt=""
+        
+    td.mob_d_none width="12" bgcolor="#FF1493"
+

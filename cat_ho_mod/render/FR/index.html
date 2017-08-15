@@ -1,129 +1,182 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
-    <title>TEMPSL</title>
-    
-    <style data-premailer="ignore" type="text/css">
-      @media only screen and (max-width: 480px), (max-device-width: 480px) {
+
+<head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
+  <title>TEMPSL</title>
+
+  <style data-premailer="ignore" type="text/css">
+    @media only screen and (max-width: 480px),(max-device-width: 480px) {
       *[class=mob-only] { width: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
       *[class=emailMobileMaxWidth] { width: 100% !important; height: auto !important; max-width: 744px !important; }
       *[class=emailMobileHide] { display: none !important; }
       *[class*=emailMobileHide] { display: none !important; }
       *[class=cent]{ width:100%!important; height:auto!important; }
-      table[class="mobile_320"] { margin: 0 auto !important; width: 320px !important; }
-      table[class="mob_318"] { margin: 0 auto !important; width: 318px !important; }
-      table[class="mob_100pct"], td[class="mob_100pct"] { width: 100% !important; }
-      img[class="mob_img_318"] { margin: 0 auto; width: 318px !important; height: auto; }
-      img[class="mob_img_244"] { margin: 0 auto; width: 244px !important; }
-      td[class="mob_bd_none_pr10"] { padding-right: 10px !important; border: none !important; }
-      td[class="mob_pd_bd_none"] { padding: 0 !important; border: none !important; }
-      td[class="mob_pd_bd_none_w10"] { width: 10px !important; padding: 0 !important; border: none !important; }
-      td[class="mob_pt_pb_10"] { padding-top: 10px !important; padding-bottom: 10px !important; }
-      td[class="mob_pd_bd_none_pdt_pdb_5"] { padding-right: 0 !important; padding-left: 0 !important; padding-top: 5px; padding-bottom: 5px; border: none !important; }
-      td[class="mob_db_logo"] { display: block !important; padding-top: 6px; padding-bottom: 10px; background-color: #E1E1E1; }
-      td[class="mob_d_b"] { display: block !important; }
-      td[class="mob_d_b_pb10"] { display: block !important; padding-bottom: 10px !important; }
-      td[class="mob_d_b_pb10_noBd"] { display: block !important; width: 320px !important; padding-bottom: 10px !important; border: none !important; }
-      td[class="mob_d_none"] { display: none !important; }
-      td img[class="mob_img_320"] { width: 320px !important; }
-      td img[class*="mob_img_320"] { width: 320px !important; }
-      td[class="mob_25"] { width: 25% !important; }
-      td[class="mob_33"] { width: 33.333% !important; }
-      img[class="mob_db_center"] { display: block !important; text-align: center !important; margin: 0 auto !important; }
+      table.mobile_320 { margin: 0 auto !important; width: 320px !important; }
+      table.mob_318 { margin: 0 auto !important; width: 318px !important; }
+      table.mob_100pct, td.mob_100pct { width: 100% !important; }
+      img.mob_img_318 { margin: 0 auto; width: 318px !important; height: auto; }
+      img.mob_img_244 { margin: 0 auto; width: 244px !important; }
+      td.mob_bd_none_pr10 { padding-right: 10px !important; border: none !important; }
+      td.mob_nopd { padding: 0 !important; }
+      td.mob_pd_bd_none { padding: 0 !important; border: none !important; }
+      td.mob_pd_bd_none_w10 { width: 10px !important; padding: 0 !important; border: none !important; }
+      td.mob_pt_pb_10 { padding-top: 10px !important; padding-bottom: 10px !important; }
+      td.mob_pd_bd_none_pdt_pdb_5 { padding-right: 0 !important; padding-left: 0 !important; padding-top: 5px; padding-bottom: 5px; border: none !important; }
+      td.mob_db_logo { display: block !important; padding-top: 6px; padding-bottom: 10px; background-color: #E1E1E1; }
+      td.mob_d_b { display: block !important; }
+      td.mob_d_b_pb10 { display: block !important; padding-bottom: 10px !important; }
+      td.mob_d_b_pb10_noBd { display: block !important; width: 320px !important; padding-bottom: 10px !important; border: none !important; }
+      td.mob_d_none { display: none !important; }
+      td img.mob_img_320 { width: 320px !important; }
+      td img.mob_img_320 { width: 320px !important; }
+      td.mob_24 { width: 24% !important; }
+      td.mob_25 { width: 25% !important; }
+      td.mob_32_4 { width: 32.4% !important; }
+      td.mob_33 { width: 33.333% !important; }
+      img.mob_db_center { display: block !important; text-align: center !important; margin: 0 auto !important; }
+      .fs10 { font-size: 10px !important; }
+      .w3 { width: 3px; }
       }
-      .vam { vertical-align: middle; }
-    </style>
-  </head>
-  <body bgcolor="#666666" link="#000000" style="-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; margin: 0; padding: 0; width: 100%;" vlink="#000000">
-    <table border="0" cellpadding="0" cellspacing="0" class="mobile_320" width="100%">
-      <tr>
-        <td>
-          <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile_320" style="margin: 0 auto;" width="636">
-            <tr>
-              <td align="center" style="margin: 0; padding-bottom: 5px; padding-top: 5px;">
-                <p align="center" class="txtheaderdoc" style="font-family: Verdana, Geneva, sans-serif; font-size: 12px; margin: 0; padding: 0;">
-                  Bonjour Madame Unnomsuperlong, Vous avez récemment visité notre site<br />et crée votre panier sur www.tempsl.fr.<br /><span style="color: #333333; font-family: Verdana, Geneva, sans-serif; font-size: 10px; margin: 0;">Si la page ne s'affiche pas correctement consultez la <a href="https://ideeshomme.com/NewsLettersID/FR/Cata_0817/index.html" target="_blank"><strong>version en ligne</strong></a></span>
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile_320" style="margin: 0 auto;" width="636">
-            <tr>
-              <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
-              <td>
-                <table border="0" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td class="mob_d_b pdb16" height="42" valign="middle" style="padding-bottom: 16px;">
-                      <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
-                        <tr>
-                          <td align="left" style="padding-left: 208px;" width="520">
-                            <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank"><img alt="" src="images/s1c1_logo.jpg" /></a>
-                          </td>
-                          <td align="left" width="92">
-                            <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank"><img alt="" src="images/s1c2_cpt.jpg" /></a>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr><tr>
-                    <td>
-                      <table border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td class="mob_d_b" height="42" valign="middle">
-                            <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
-                              <tr>
-                                <td align="center" class="mob_25 pdt-8 pdb-8 nav" width="71" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">CUISINE</a>
-                                </td>
-                                <td width="7"></td>
-                                <td align="center" class="mob_25 pdt-8 pdb-8 nav" width="95" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">ENTRETIEN &amp;<br />RANGEMENT</a>
-                                </td>
-                                <td width="7"></td>
-                                <td align="center" class="mob_25 pdt-8 pdb-8 nav" width="73" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">SANTE &amp;<br />BEAUTE</a>
-                                </td>
-                                <td width="7"></td>
-                                <td align="center" class="mob_25 pdt-8 pdb-8 nav" width="82" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">MAISON &amp;<br />DECO</a>
-                                </td>
-                                <td class="mob_d_none" width="7"></td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td class="mob_d_b" valign="middle">
-                            <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
-                              <tr>
-                                <td align="center" class="mob_33 pdt-8 pdb-8 nav" width="66" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">LOISIRS</a>
-                                </td>
-                                <td width="7"></td>
-                                <td align="center" class="mob_33 pdt-8 pdb-8 nav" width="102" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">VETEMENTS &amp;<br />ACCESSOIRES</a>
-                                </td>
-                                <td width="8"></td>
-                                <td align="center" class="mob_33 pdt-8 pdb-8 nav-ba" width="80" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#FFFF00" valign="middle">
-                                  <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">BONNES<br />AFFAIRES</a>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-              <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </body>
+  </style>
+</head>
+
+<body bgcolor="#666666" link="#000000" style="-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; margin: 0; padding: 0; width: 100%;" vlink="#000000">
+  <table border="0" cellpadding="0" cellspacing="0" class="mobile_320" width="100%">
+    <tr>
+      <td>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile_320" style="margin: 0 auto;" width="636">
+          <tr>
+            <td align="center" style="margin: 0; padding-bottom: 5px; padding-top: 5px;">
+              <p align="center" class="txtheaderdoc" style="font-family: Verdana, Geneva, sans-serif; font-size: 12px; margin: 0; padding: 0;">
+                Bonjour Madame Unnomsuperlong, Vous avez récemment visité notre site
+                <br />et crée votre panier sur www.tempsl.fr.
+                <br /><span style="color: #333333; font-family: Verdana, Geneva, sans-serif; font-size: 10px; margin: 0;">Si la page ne s'affiche pas correctement consultez la <a href="https://ideeshomme.com/NewsLettersID/FR/Cata_0817/index.html" target="_blank"><strong>version en ligne</strong></a></span>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile_320" style="margin: 0 auto;" width="636">
+          <tr>
+            <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
+            <td>
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="bgcf mob_d_b pdb16" valign="middle" style="padding-bottom: 16px;" bgcolor="#FFFFFF">
+                    <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
+                      <tr>
+                        <td align="left" class="mob_nopd" style="padding-left: 208px;">
+                          <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank">
+                            <img alt="" src="images/s1c1_logo.jpg" />
+                          </a>
+                        </td>
+                        <td align="left" class="mob_nopd" style="padding-left: 116px;" width="92">
+                          <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank">
+                            <img alt="" src="images/s1c2_cpt.jpg" />
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td class="mob_d_b" height="42" valign="middle">
+                          <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
+                            <tr>
+                              <td align="center" class="mob_24 pdt-8 pdb-8 nav fs10" width="71" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">CUISINE</a>
+                              </td>
+                              <td class="w3" width="7"></td>
+                              <td align="center" class="mob_24 pdt-8 pdb-8 nav fs10" width="95" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">ENTRETIEN &amp;<br />RANGEMENT</a>
+                              </td>
+                              <td class="w3" width="7"></td>
+                              <td align="center" class="mob_24 pdt-8 pdb-8 nav fs10" width="73" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">SANTE &amp;<br />BEAUTE</a>
+                              </td>
+                              <td class="w3" width="7"></td>
+                              <td align="center" class="mob_24 pdt-8 pdb-8 nav fs10" width="82" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">MAISON &amp;<br />DECO</a>
+                              </td>
+                              <td class="mob_d_none" width="7"></td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td class="mob_d_b" valign="middle">
+                          <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
+                            <tr>
+                              <td align="center" class="mob_32_4 pdt-8 pdb-8 nav fs10" width="66" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">LOISIRS</a>
+                              </td>
+                              <td class="w3" width="7"></td>
+                              <td align="center" class="mob_32_4 pdt-8 pdb-8 nav fs10" width="102" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#F9D5E1"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">VETEMENTS &amp;<br />ACCESSOIRES</a>
+                              </td>
+                              <td class="w3" width="8"></td>
+                              <td align="center" class="mob_33_4 pdt-8 pdb-8 fs10 nav-ba" width="80" style="border-radius: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; line-height: normal; padding-bottom: 6px; padding-top: 6px;" bgcolor="#FFFF00"
+                              valign="middle">
+                                <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank" style="color: #FF0066; text-decoration: none;">BONNES<br />AFFAIRES</a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile_320" style="margin: 0 auto;" width="636">
+          <tr>
+            <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
+            <td>
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="bgcf mob_d_b pdb16" valign="middle" style="padding-bottom: 16px;" bgcolor="#FFFFFF">
+                    <table border="0" cellpadding="0" cellspacing="0" class="mobile_320">
+                      <tr>
+                        <td align="left" class="mob_nopd" style="padding-left: 208px;">
+                          <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank">
+                            <img alt="" src="images/s1c1_logo.jpg" />
+                          </a>
+                        </td>
+                        <td align="left" class="mob_nopd" style="padding-left: 116px;" width="92">
+                          <a href="https://www.enseigne.fr/fr/forme-bien-etre/Univers.html?" target="_blank">
+                            <img alt="" src="images/s1c2_cpt.jpg" />
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td bgcolor="#FF1493" class="mob_d_none" width="12"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
 </html>
