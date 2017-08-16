@@ -1,31 +1,25 @@
 table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   tr
-    td.mob_d_none width="12" bgcolor="#{$guideColor1}"
-    td valign="bottom"
+    td.mob_d_none
+    td height="9"
+    td.mob_d_none
+  tr
+    td.mob_d_none width="12"
+      img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pkWrp_shad_left.png") alt=""
+    td valign="top"
       table border="0" cellpadding="0" cellspacing="0"
         tr
-          td.mob_d_b.pdt24
+          td.mob_d_b
+            img.centw height="9" src==(($abspath == true ? $srcAbs : $srcRel)+"pkWrp_shad_top.png") alt=""
+        tr
+          td
             table border="0" cellpadding="0" cellspacing="0"
               tr
-                td.mob_nopd width="#{$column*7+$gutter*6}"
-                  table border="0" cellpadding="0" cellspacing="0"
-                    tr
-                      td.pdb16
-                        img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"s3c1s1_accTitle.png") alt=""
-                    tr
-                      td.pdb16
-                        p.accTxt align="left"
-                          b
-                            | Bonjour &lt;Mme | Mr #persoUnnomsuperlong&gt;,<br />
-                          | Vous avez récemment visité notre site et crée votre panier sur www.tempsl.fr.<br /> Celui-ci a été sauvegardé pour faciliter votre commande. Vous pouvez le consulter puis valider votre panier. Il reste accessible durant quelques jours seulement !<br />À tout de suite sur
-                          a href==$url www.tempsl.fr !
-                    tr
-                      td.mob_tal align="center"
-                       img src==(($abspath == true ? $srcAbs : $srcRel)+"s3c1s3_accBtn.png") alt=""
-                td width="12"
-                td.mob_d_none.mob_nopd valign="top" width==($column*2+$gutter*1) align="left"
-                  a href==("#{$url}forme-bien-etre/Univers.html?") target="_blank"
-                   img src==(($abspath == true ? $srcAbs : $srcRel)+"s3c2_accVisu.jpg") alt=""
-        
-    td.mob_d_none width="12" bgcolor="#{$guideColor1}"
-
+                td.pdt16.pdl10.pdb12.mob_nopdl
+                  img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"s4_pktitle.png") alt=""
+              tr
+                td
+                  == Slim::Template.new('./src/FR/partial/_pk_l1.slim').render
+              
+    td.mob_d_none width="12"
+      img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pkWrp_shad_right.png") alt=""

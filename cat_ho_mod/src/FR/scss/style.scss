@@ -25,10 +25,15 @@ td { line-height: 0;
 .bgce { background-color: #EEEEEE;}
 // padding
 .pdt6 {@include pdt(6) }
+.pdt10 {@include pdt(10) }
 .pdt16 {@include pdt(16)}
-.pdb6 { @include pdb(6)}
 .pdt24 {@include pdt(24)}
+.pdb6 { @include pdb(6)}
+.pdb12 {@include pdb(12)}
 .pdb16 {@include pdb(16)}
+.pdl10 {@include pdl(10)}
 
 .nav a { color: #FF0066; text-decoration: none; }
 .accTxt { line-height: 24px; font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #444544; }
+.lib { font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #444444; }
+.price { font-size: 21px; font-weight: bold; font-family:  Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #E1134C;}

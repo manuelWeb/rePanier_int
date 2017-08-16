@@ -18,13 +18,16 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
         *[class=emailMobileHide] { display: none !important; }
         *[class*=emailMobileHide] { display: none !important; }
         *[class=cent]{ width:100%!important; height:auto!important; }
+        *[class=centw]{ width:100%!important; }
         table.mobile_320 { margin: 0 auto !important; width: 320px !important; }
+        table.mobile_300 { margin: 0 auto !important; width: 300px !important; }
         table.mob_318 { margin: 0 auto !important; width: 318px !important; }
         table.mob_100pct, td.mob_100pct { width: 100% !important; }
         img.mob_img_318 { margin: 0 auto; width: 318px !important; height: auto; }
         img.mob_img_244 { margin: 0 auto; width: 244px !important; }
         td.mob_bd_none_pr10 { padding-right: 10px !important; border: none !important; }
         td.mob_nopd { padding: 0 !important; }
+        td.mob_nopdl { padding-left: 0 !important; }
         td.mob_pdb_4 { padding-bottom: 4px !important; }
         td.mob_pd_bd_none { padding: 0 !important; border: none !important; }
         td.mob_pd_bd_none_w10 { width: 10px !important; padding: 0 !important; border: none !important; }
@@ -60,7 +63,7 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
           == Slim::Template.new('./src/FR/partial/_accroche.slim').render
       tr
         td valign="top"
-          == Slim::Template.new('./src/FR/partial/_accroche.slim').render
+          == Slim::Template.new('./src/FR/partial/_pkWrp.slim').render
       / tr
       /   td
       /     == Slim::Template.new('./src/FR/partial/_gift_top_shadow.slim').render

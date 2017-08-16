@@ -1,0 +1,34 @@
+- nbpk = [1,2,3,4]; lib = ["lib1", "lib2", "lib3", "lib4", ]; price = ["price1", "price2", "price3", "price4", ]
+table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
+  tr
+    td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
+      table border="0" cellpadding="0" cellspacing="0"
+        tr
+          td
+            img.pdb16.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk1_visuel.jpg") alt=""
+        tr
+          td align="center"
+            p.lib
+              | Corbeille à glaçons : pomme ou tomate
+        tr
+          td align="center"
+            p.price
+              | 12.95 €
+    td.mob_d_none width="#{$gutter}"
+
+    td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
+      table border="0" cellpadding="0" cellspacing="0"
+        tr
+          td
+            img.pdb16.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk2_visuel.jpg") alt=""
+        tr
+          td align="center"
+            p.lib
+              | Lib superlong Corbeille à glaçons<br />pomme ou tomate deux ligne maxi
+        tr
+          td align="center"
+            p.price
+              | 12.95 €
+  tr
+    td height="12"
+     | espace vert entre ligne pk
