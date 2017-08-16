@@ -5,27 +5,30 @@
   background-color: #F9D5E1;
   border-radius: 3px;
 }
+td { line-height: 0;
+  p {
+    margin: 0; padding: 0;
+    line-height: normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px;
+  }
+}
 .nav-ba {
   @extend .nav;
   font-weight: bold;
   background-color: #FFFF00;
 }
-@mixin pdt($val) {
-  padding-top: $val + px;
-}
-@mixin pdr($val) {
-  padding-right: $val + px;
-}
-@mixin pdb($val) {
-  padding-bottom: $val + px;
-}
-@mixin pdl($val) {
-  padding-left: $val + px;
-}
+@mixin pdt($val) {padding-top: $val + px; }
+@mixin pdr($val) {padding-right: $val + px; }
+@mixin pdb($val) {padding-bottom: $val + px; }
+@mixin pdl($val) {padding-left: $val + px; }
 .bgcf { background-color: #FFFFFF;}
+.bgcc { background-color: #CCCCCC;}
+.bgce { background-color: #EEEEEE;}
+// padding
+.pdt6 {@include pdt(6) }
 .pdt16 {@include pdt(16)}
+.pdb6 { @include pdb(6)}
+.pdt24 {@include pdt(24)}
 .pdb16 {@include pdb(16)}
-.nav a { color: #FF0066; text-decoration: none; }
-.pdt-8 { padding-top: 6px; }
-.pdb-8 { padding-bottom: 6px;}
 
+.nav a { color: #FF0066; text-decoration: none; }
+.accTxt { line-height: 24px; font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #444544; }
