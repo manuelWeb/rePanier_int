@@ -1,7 +1,8 @@
-- nbpk = [1,2,3,4]; lib = ["lib1", "lib2", "lib3", "lib4", ]; price = ["price1", "price2", "price3", "price4", ]
+- nbpk = [1,2,3,4]; lib = ["lib1", "lib2", "lib3", "lib4"]; price = ["price1", "price2", "price3", "price4"]
 table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   - nbpk.each{ |i|
   tr
+    puts #{i}
     - if i % 2 == 1
       td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
         table border="0" cellpadding="0" cellspacing="0"
@@ -33,10 +34,10 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
             td align="center"
               p.price
                 | 09.95 €
-  - if i % 2 == 1
-    tr
-      td height="12"
-       | espace vert entre ligne pk
   - }
+  tr
+    td height="12"
+     | espace vert entre ligne pk
 
+/ - if i % 2 == 1
   / - if i % 2 == 0
