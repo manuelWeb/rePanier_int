@@ -4,7 +4,7 @@
 / == Slim::Template.new('./src/FR/var/var.slim').render
 - $abspath = true
 - $imgBGcondition = $abspath == true ? $srcAbs : $srcRel
-doctype strict
+doctype transitional
 html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
   head
     meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
@@ -12,7 +12,7 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
     link rel="stylesheet" href="css/style.css" type="text/css"
     / link rel="stylesheet" href="scss/style.scss"
     style data-premailer="ignore" type="text/css"
-      | @media only screen and (max-width: 480px),(max-device-width: 480px) {
+      | @media only screen and (max-width: 480px),(max-device-width: 1024px) and (orientation : portrait) {
         *[class=mob-only] { width: auto !important; height: auto !important; overflow: visible !important; display: block !important; }
         *[class=emailMobileMaxWidth] { width: 100% !important; height: auto !important; max-width: 744px !important; }
         *[class=emailMobileHide] { display: none !important; }
@@ -52,15 +52,15 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
 
   body bgcolor="#FFFFFF" vlink="#000000" link="#000000" style="margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100%;"
     table.mobile_320 width="100%" border="0" cellpadding="0" cellspacing="0"
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_header_doc.slim').render
-      / tr
-      /   td valign="top"
-      /     == Slim::Template.new('./src/FR/partial/_header.slim').render
-      / tr
-      /   td valign="top"
-      /     == Slim::Template.new('./src/FR/partial/_accroche.slim').render
+      tr
+        td
+          == Slim::Template.new('./src/FR/partial/_header_doc.slim').render
+      tr
+        td valign="top"
+          == Slim::Template.new('./src/FR/partial/_header.slim').render
+      tr
+        td valign="top"
+          == Slim::Template.new('./src/FR/partial/_accroche.slim').render
       tr
         td valign="top"
           == Slim::Template.new('./src/FR/partial/_pkWrp.slim').render
