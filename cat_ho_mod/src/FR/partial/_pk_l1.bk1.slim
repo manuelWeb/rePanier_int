@@ -3,6 +3,9 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
   - nbpk.each{ |i|
   tr
     td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
+      - if i % 2 == 0
+      p
+        | test #{i%2}
       table border="0" cellpadding="0" cellspacing="0"
         tr
           td
@@ -17,24 +20,7 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
               | 12.95 €
     - if i % 2 == 1
       td.mob_d_none width="#{$gutter}"
-        |g
-    - if i % 2 == 1
-      td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
-        table border="0" cellpadding="0" cellspacing="0"
-          tr
-            td
-              img.pdb16.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk2_visuel.jpg") alt=""
-          tr
-            td align="center"
-              p.lib
-                | 12 sachets fraîcheur viande Elicuisine #{i%2}
-          tr
-            td align="center"
-              p.price
-                | 09.95 €
   - }
   tr
     td height="12"
      | espace vert entre ligne pk
-
-  / - if i % 2 == 0
