@@ -1,4 +1,5 @@
-- nbpk = [1,2,3,4]; lib = ["lib1", "lib2", "lib3", "lib4"]; price = ["price1", "price2", "price3", "price4"]
+- nbpk = [1,2,3,4]; lib = ["Corbeille à glaçons : pomme ou tomate", "Sac rafraîchisseur", "6 glaçons céramique", "Piques apéritif tulipes"]; price = ["12.95 €", "8.90 €", "9.95 €", "5.95 €"]
+- cpt = 0; cpt1 = cpt+1;
 table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   - nbpk.each{ |i|
   / - if i == 1 || i == 3
@@ -6,35 +7,43 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
   - if i.odd?
     tr
       - if i % 2 == 1
-        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
+        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top"
           table border="0" cellpadding="0" cellspacing="0"
             tr
-              td
-                img.pdb16.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk1_visuel.jpg") alt=""
+              td.pdb16
+                img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+1}_visuel.jpg") alt=""
             tr
               td align="center"
                 p.lib
-                  | Corbeille à glaçons : pomme ou tomate
+                  | #{lib[cpt]}
             tr
               td align="center"
                 p.price
-                  | 12.95 €
+                  | #{price[cpt]}
         td.mob_d_none width="#{$gutter}"
-          |g
-        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top" bgcolor="#{$guideColor1}"
+          / | #{cpt}
+        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top"
           table border="0" cellpadding="0" cellspacing="0"
             tr
-              td
-                img.pdb16.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk2_visuel.jpg") alt=""
+              td.pdb16
+                img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+2}_visuel.jpg") alt=""
             tr
               td align="center"
                 p.lib
-                  | 12 sachets fraîcheur viande Elicuisine
+                  | #{lib[cpt+1]}
             tr
               td align="center"
                 p.price
-                  | 09.95 €
+                  | #{price[cpt+1]}
     tr
       td height="12"
-       | espace vert entre ligne pk
+
+  - cpt += 1
   - }
+
+  / - lib.each{ |j|
+  / tr
+  /   td
+  /     p
+  /      | j vaut #{j} index #{cpt}
+  / - }

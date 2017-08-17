@@ -89,7 +89,7 @@ gulp.task('premailer', function (cb) {
   gulp.src('render/**/*.html')
   .pipe(plumber())
   .pipe(premailer()) //,{read:false}
-  .pipe(prettify({indent_car:'', indent_size: 2}))
+  // .pipe(prettify({indent_car:'', indent_size: 2}))
   .pipe(gulp.dest('render'))
   .on('end',function () {
     premailEnd = true;

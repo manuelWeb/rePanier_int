@@ -1,3 +1,4 @@
+img { display: block; line-height: normal; }
 .vam { vertical-align: middle; }
 .nav {
   @extend .vam;
@@ -5,11 +6,12 @@
   background-color: #F9D5E1;
   border-radius: 3px;
 }
-td { line-height: 0;
+td { 
   p {
     margin: 0; padding: 0;
     line-height: normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px;
   }
+  img { display: block; line-height: normal; }
 }
 .nav-ba {
   @extend .nav;
