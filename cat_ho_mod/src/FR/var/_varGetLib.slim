@@ -1,4 +1,4 @@
-# ruby:
+ruby:
   require "nokogiri"
   require "open-uri"
   require "net/https"
@@ -22,12 +22,12 @@
   cpt = 0
   tabLib.each { |i|
     if cpt == 0
-      puts "-$putLib = ["
+      print "-$putLib = ["
     end
-    puts '"' + i + '"'
+    print '"' + i + '"'
     if cpt < tabLib.length-1
-      puts ","
+      print ", "
     end
     cpt+=1
   }
-  puts "]"
+  print "]"
