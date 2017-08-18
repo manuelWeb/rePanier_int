@@ -77,6 +77,7 @@ gulp.task('slim', function () {
   }))
   .pipe(gulp.dest('render')) // html folder
   .pipe(using())
+  .pipe(bs.reload({stream: true }))
   .on('end',function () {
     slimEnd = true;
     premailergo(slimEnd);
@@ -129,7 +130,7 @@ function premailergo (slimEnd) {
 };
 
 // lancement > fonction watch
-gulp.task('dev',['bs','img','slim','sass'], function() {
+gulp.task('dev',['img','slim','sass','bs'], function() {
   gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img'])
   gulp.watch([src+'**/**/*.slim'],['sass','slim','img']);
   gulp.watch(src+'**/scss/*.scss',['sass','slim']);

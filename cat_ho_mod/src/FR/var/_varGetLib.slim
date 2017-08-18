@@ -1,0 +1,10 @@
+- require "nokogiri"
+- require "open-uri"
+- require "net/https"
+- mon_url = "https://www.tempsl.fr/fr/xxx/xxx/xxx/1615111.html"
+- mon_url = "https://www.tempsl.fr/fr/xxx/xxx/xxx/1518216.html"
+- mon_url = "https://www.tempsl.fr/fr/xxx/xxx/xxx/1902113.html"
+- mon_url = "https://www.tempsl.fr/fr/xxx/xxx/xxx/5663216.html"
+- doc = Nokogiri::HTML(open(mon_url,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
+- libNoko = doc.at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text
+- puts libNoko.encode("iso-8859-1")
