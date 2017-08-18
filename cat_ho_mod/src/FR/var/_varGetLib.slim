@@ -1,5 +1,4 @@
-/ - libNoko = doc.at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text
-ruby:
+# ruby:
   require "nokogiri"
   require "open-uri"
   require "net/https"
@@ -19,16 +18,16 @@ ruby:
     aryLib.push( Nokogiri::HTML(open(i,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text.encode('iso-8859-1'))
   }
   # hash
-  puts aryLib
-  $tabLib = aryLib
-
-
-  # aryUrl.push(url+path+i+ext)  
-  # doc = Nokogiri::HTML(open(mon_url,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE))
-  # $libNoko = doc.at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text
-  #puts Nokogiri::HTML(open(aryUrl[0],  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text.encode('iso-8859-1')
-/ puts ref[0]
-/ .encode('iso-8859-1').encode('utf-8')
-/ .encode!('UTF-16', 'UTF-8')
-/ - libNoko.encode('iso-8859-1')
-/ .to_s.force_encoding('UTF-8')
+  tabLib = aryLib
+  cpt = 0
+  tabLib.each { |i|
+    if cpt == 0
+      puts "-$putLib = ["
+    end
+    puts '"' + i + '"'
+    if cpt < tabLib.length-1
+      puts ","
+    end
+    cpt+=1
+  }
+  puts "]"
