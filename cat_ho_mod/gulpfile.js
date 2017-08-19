@@ -70,14 +70,20 @@ gulp.task('sass', function() {
   .pipe(browserSync.reload({stream: true }));
 })
 // compile _varGetLib before start slim1 task
-gulp.task('postslim', function (cb) {
+gulp.task('postslim', function () {
   return gulp.src('src/FR/var/_varGetLib.slim')
   .pipe(slim())
   .pipe(rename('src/FR/var/_varLib.slim'))
-  .pipe(gulp.dest('src/FR/var/'))
+  .pipe(gulp.dest('./'))
+  .on('end', function () {
+    gulp.start('dev')
+  })
 });
+  // function cb () {
+  //   console.log('strat DEV!!!!')
+  // }
 // slim task
-gulp.task('slim1', function () {
+gulp.task('slim', function () {
   var slimEnd = false;
   return gulp.src([src+'**/slim/*.slim'])
   // .pipe(plumber())
@@ -144,5 +150,5 @@ gulp.task('dev',['img','slim','browserSync'], function() {
   gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img'])
   // gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['browserSync','sass','slim','img']);
   gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['sass','slim','img']);
-  // gulp.watch(src+'**/scss/*.scss',['sass','slim']);
+  gulp.watch(src+'**/scss/*.scss',['sass','slim']);
 });
