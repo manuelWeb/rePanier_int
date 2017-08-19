@@ -18,6 +18,26 @@ var gulp           = require('gulp'),
     changed        = require('gulp-changed');
     const notifier = require('node-notifier');
 
+function cb () {
+  console.log('ruby code is Okay guy!');
+  gulp.start('dev1');
+};
+gulp.task('dev', function (cb) {
+  rimraf('./src/FR/var/_varLib.slim', function () {});
+});
+// exec rubyLib.rb
+var exec = require('child_process').exec
+
+exec('./rubyLib.rb', function (error, stdout, stderr) {
+  if (stdout) {
+    console.log('RUBY: ' + stdout);
+    cb();
+  }else if (stderr) {
+    console.log('stderr: ' + stderr);
+  }else if (error) {
+    console.log('error: ' + error);
+  }
+});
 // src & output
 var  src = 'src/';
 function errorLog(error) {
@@ -33,9 +53,9 @@ function errorLog(error) {
 =            task init            =
 =================================*/
 // browser-sync task !attention il faut un index.html obligatoire
-gulp.task('browserSync',function () {
+gulp.task('browserSync', ['img','slim','sass','premailer'], function () {
   browserSync({
-    // browser: 'chrome',
+    browser: 'firefox',
     server: {
       baseDir: 'render/FR'
     }
@@ -69,41 +89,13 @@ gulp.task('sass', function() {
   .pipe(using())
   .pipe(browserSync.reload({stream: true }));
 })
-// compile _varGetLib before start slim1 task
-// gulp.task('postslim', function () {
-//   return gulp.src('src/FR/var/_varGetLib.slim')
-//   .pipe(slim())
-//   .pipe(rename('src/FR/var/_varLib.slim'))
-//   .pipe(gulp.dest('./'))
-//   .on('end', function () {
-//     gulp.start('dev')
-//   })
-// });
-// var exec = require("child_process").exec;
 
-// exec('ruby -e "puts \'Hello from Ruby!\'"', function (err, stdout, stderr) {
-//     console.log(stdout);
-// });
-var exec = require('child_process').exec
-
-exec('./rubyLib.rb', function (error, stdout, stderr) {
-  console.log('stdout: ' + stdout);
-  console.log('stderr: ' + stderr);
-  console.log('error: ' + error);
-});
-  // function cb () {
-  //   console.log('strat DEV!!!!')
-  // }
 // slim task
 gulp.task('slim', function () {
   var slimEnd = false;
   return gulp.src([src+'**/slim/*.slim'])
   // .pipe(plumber())
-  .pipe(slim({
-    pretty: true,
-    tabsize: 2
-  })) 
-  // .pipe(using())// cb // {read:false},
+  .pipe(slim({pretty: true, tabsize: 2}))
   .on('error', errorLog)
   .pipe(gulp.dest('render')) // slim folder
   .pipe(rename(function(path) {
@@ -120,8 +112,7 @@ gulp.task('premailer', function () {
   var premailEnd = false;
   gulp.src('render/**/*.html')
   .pipe(plumber())
-  .pipe(premailer()) //,{read:false}
-  // .pipe(prettify({indent_car:'', indent_size: 2}))
+  .pipe(premailer())
   .pipe(gulp.dest('render'))
   .on('end',function () {
     premailEnd = true;
@@ -158,7 +149,7 @@ function premailergo (slimEnd) {
 };
 
 // lancement > fonction watch // ,'sass'
-gulp.task('dev',['img','slim','browserSync'], function() {
+gulp.task('dev1',['img', 'slim', 'sass', 'browserSync'], function() {
   gulp.watch([src+'**/images/*.{png,jpg,gif}'],['img'])
   // gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['browserSync','sass','slim','img']);
   gulp.watch([src+'**/slim/*.slim',src+'**/**/*.slim'],['sass','slim','img']);
