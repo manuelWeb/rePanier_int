@@ -70,14 +70,26 @@ gulp.task('sass', function() {
   .pipe(browserSync.reload({stream: true }));
 })
 // compile _varGetLib before start slim1 task
-gulp.task('postslim', function () {
-  return gulp.src('src/FR/var/_varGetLib.slim')
-  .pipe(slim())
-  .pipe(rename('src/FR/var/_varLib.slim'))
-  .pipe(gulp.dest('./'))
-  .on('end', function () {
-    gulp.start('dev')
-  })
+// gulp.task('postslim', function () {
+//   return gulp.src('src/FR/var/_varGetLib.slim')
+//   .pipe(slim())
+//   .pipe(rename('src/FR/var/_varLib.slim'))
+//   .pipe(gulp.dest('./'))
+//   .on('end', function () {
+//     gulp.start('dev')
+//   })
+// });
+// var exec = require("child_process").exec;
+
+// exec('ruby -e "puts \'Hello from Ruby!\'"', function (err, stdout, stderr) {
+//     console.log(stdout);
+// });
+var exec = require('child_process').exec
+
+exec('./rubyLib.rb', function (error, stdout, stderr) {
+  console.log('stdout: ' + stdout);
+  console.log('stderr: ' + stderr);
+  console.log('error: ' + error);
 });
   // function cb () {
   //   console.log('strat DEV!!!!')
