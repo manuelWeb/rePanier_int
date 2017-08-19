@@ -70,10 +70,11 @@ gulp.task('sass', function() {
   .pipe(browserSync.reload({stream: true }));
 })
 // compile _varGetLib before start slim1 task
-gulp.task('slim', function (cb) {
+gulp.task('postslim', function (cb) {
   return gulp.src('src/FR/var/_varGetLib.slim')
   .pipe(slim())
-  .pipe(gulp.dest('./'))
+  .pipe(rename('src/FR/var/_varLib.slim'))
+  .pipe(gulp.dest('src/FR/var/'))
 });
 // slim task
 gulp.task('slim1', function () {
