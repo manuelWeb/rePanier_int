@@ -82,7 +82,7 @@ ref.each {|i|
   image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
   # image.width | path | .format "png" | resolution
   puts "images à resizer : #{image.dimensions}"
-  image.crop "300x196+0+0"
+  # image.crop "300x196+0+0"
   # image.colorspace "Gray"
   image.write "#{image.path}"
   image.combine_options do |b|
