@@ -1,4 +1,4 @@
-- nbpk = [1,2,3,4]; price = ["12.95 €", "8.90 €", "9.95 €", "5.95 €"]
+- nbpk = [1,2,3,4,5]; price = ["12.95 €", "8.90 €", "9.95 €", "5.95 €"]
 - cpt = 0; cpt1 = cpt+1;
 table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   - nbpk.each{ |i|
@@ -19,7 +19,7 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
             tr
               td align="center"
                 p.price
-                  | #{price[cpt]}
+                  | #{$putPri[cpt]}
         td.mob_d_none width="#{$gutter}"
           / | #{cpt}
         td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top"
@@ -34,7 +34,7 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
             tr
               td align="center"
                 p.price
-                  | #{price[cpt+1]}
+                  | #{$putPri[cpt+1]}
     tr
       td height="12"
 

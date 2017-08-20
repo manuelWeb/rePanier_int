@@ -5,10 +5,10 @@ require "net/https"
 url  = "https://www.tempsl.fr/fr/"
 path = "xxx/xxx/xxx/"
 ext  = ".html"
-# ref = ["1518216", "1902113", "1615111", "5663216"]
-ref = ["2505410", "1902113", "1615111", "5663216"]
+ref = [ "1615111", "1518216", "5663216", "1902113"]
 aryUrl = Array.new
 aryLib = Array.new
+aryPri = Array.new
 # build full URL
 ref.each {|i|
   aryUrl.push(url+path+i+ext)
@@ -17,29 +17,66 @@ ref.each {|i|
 aryUrl.each {|i|
   # puts i
   aryLib.push( Nokogiri::HTML(open(i,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text.encode('iso-8859-1'))
+  aryPri.push( Nokogiri::HTML(open(i,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LAB_PRIX_PRODUIT").text.encode('iso-8859-1'))
 }
-# hash
-tabLib = aryLib
+# hash lib
 cpt = 0
-varSlim = ''
-tabLib.each { |i|
+varLib = ''
+aryLib.each { |i|
   if cpt == 0
     # print "-$putLib = ["
-    varSlim += "- $putLib = ["
+    varLib += "- $putLib = ["
   end
   # print '"' + i + '"'
-  varSlim += '"' + i + '"'
-  if cpt < tabLib.length-1
+  varLib += '"' + i + '"'
+  if cpt < aryLib.length-1
     # print ", "
-    varSlim += ", "
+    varLib += ", "
   end
   cpt+=1
 }
-varSlim += "]"
-txt = "_varLib << #{varSlim} "
+varLib += "]"
+txt = "_varLib << #{varLib} "
 txt = txt.encode('iso-8859-1')
 puts "#{txt}"
 
+
+# hash price
+cptPri = 0
+varPri = ''
+aryPri.each { |i|
+  if cptPri == 0
+    # print "-$putLib = ["
+    varPri += "- $putPri = ["
+  end
+  # print '"' + i + '"'
+  varPri += '"' + i + '"'
+  if cptPri < aryLib.length-1
+    # print ", "
+    varPri += ", "
+  end
+  cptPri+=1
+}
+varPri += "]"
+txt = "_varPri << #{varPri} "
+txt = txt.encode('iso-8859-1')
+puts "#{txt}"
+
+# écriture _varLib.slim
 output = File.open( "src/FR/var/_varLib.slim","w" )
-output << varSlim
+output << varLib + "\n"
+output << varPri
 output.close
+
+cpti = 0
+ref.each {|i|
+  puts i
+  # get online image to save on src/FR/images
+  File.open("src/FR/images/pk#{cpti}.jpg", "wb") do |saved_file|
+    # the following "open" is provided by open-uri
+    open("https://www.tempsl.fr/Visuels/Produits/zoom/#{i}_WEB1.jpg", "rb") do |read_file|
+      saved_file.write(read_file.read)
+    end
+  end
+  cpti+=1
+}

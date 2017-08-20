@@ -23,7 +23,15 @@ function cb () {
   gulp.start('dev1');
 };
 gulp.task('dev', function (cb) {
-  rimraf('./src/FR/var/_varLib.slim', function () {});
+  rimraf('./src/FR/var/_varLib.slim', function cb() {
+    console.log('_varLib.slim file have been destroyed!');
+    rimraf('render', function cb () {
+      console.log('render folder have been destroyed!');
+      rimraf('./src/FR/images/pk*.jpg', function cb () {
+        console.log('images are destroyed!');
+      });
+    });
+  });
 });
 // exec rubyLib.rb
 var exec = require('child_process').exec
@@ -31,6 +39,7 @@ var exec = require('child_process').exec
 exec('./rubyLib.rb', function (error, stdout, stderr) {
   if (stdout) {
     console.log('RUBY: ' + stdout);
+    // une fois les Lib + price recup on lance le CB
     cb();
   }else if (stderr) {
     console.log('stderr: ' + stderr);
