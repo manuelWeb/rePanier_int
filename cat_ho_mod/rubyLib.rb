@@ -80,14 +80,15 @@ ref.each {|i|
     end
   end
   image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
-  # image.width | path | .format "png"
-  puts "images à resizer : #{image.resolution}"
-  # img("#{image.path}").write do |f|
-  #    f.quality = 40
-  # end 
-  # image.write "#{image.path}"
+  # image.width | path | .format "png" | resolution
+  puts "images à resizer : #{image.dimensions}"
+  image.crop "300x196+0+0"
+  # image.colorspace "Gray"
+  image.write "#{image.path}"
   image.combine_options do |b|
     b.resize "300x196>"
+    b.quality "100" # 86 = q:79 fw info
+    # b.depth "7"
     # b.blur "0x15"
   end 
   cpti+=1
