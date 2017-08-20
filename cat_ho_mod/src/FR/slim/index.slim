@@ -3,10 +3,10 @@
 == Slim::Template.new('./src/FR/var/_var-layout.slim').render
 == Slim::Template.new('./src/FR/var/varTXT.slim').render
 / == Slim::Template.new('./src/FR/var/var.slim').render
-- $abspath = true
+- $abspath = false
 - $imgBGcondition = $abspath == true ? $srcAbs : $srcRel
 doctype transitional
-html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+html
   head
     meta http-equiv="Content-Type" content="text/html;charset=UTF-8"
     title ==($title_document)
@@ -19,6 +19,7 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
         *[class=emailMobileHide] { display: none !important; }
         *[class*=emailMobileHide] { display: none !important; }
         *[class=cent]{ width:100%!important; height:auto!important; }
+        *[class=rz72]{ width:72%!important; height:auto!important; }
         *[class=centw]{ width:100%!important; }
         table.mobile_320 { margin: 0 auto !important; width: 320px !important; }
         table.mobile_300 { margin: 0 auto !important; width: 300px !important; }
@@ -65,58 +66,6 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       tr
         td valign="top"
           == Slim::Template.new('./src/FR/partial/_pkWrp.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_gift_top_shadow.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_gift.slim').render
-      /     / == Slim::Template.new('./src/FR/partial/_gift_csoaCmc.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_bottshad.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_titlepck.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_vspace5h.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_Ligne1-pck-1-2-3sur3.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_vspace10h.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_Ligne1-pck1et2sur2.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_lowershad.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_btn.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_z1_title.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_bshad.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_z1.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_vspace30h.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_z2_title.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_bshad.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_z2.slim').render
       / tr
       /   td
       /     == Slim::Template.new('./src/FR/partial/_foo_legal.slim').render

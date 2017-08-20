@@ -7,11 +7,11 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
   - if i.odd?
     tr
       - if i % 2 == 1
-        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top"
+        td.mob_d_b.pdb12 valign="top"
           table border="0" cellpadding="0" cellspacing="0"
             tr
-              td.pdb16
-                img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+1}_visuel.jpg") alt=""
+              td.pdb16 align="center" width="#{$column*6+$gutter*5}"
+                img.rz72 src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+1}.jpg") alt=""
             tr
               td align="center"
                 p.lib
@@ -22,11 +22,11 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
                   | #{$putPri[cpt]}
         td.mob_d_none width="#{$gutter}"
           / | #{cpt}
-        td.mob_d_b.pdb12 width="#{$column*6+$gutter*5}" valign="top"
+        td.mob_d_b.pdb12 valign="top"
           table border="0" cellpadding="0" cellspacing="0"
             tr
-              td.pdb16
-                img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+2}_visuel.jpg") alt=""
+              td.pdb16 align="center" width="#{$column*6+$gutter*5}"
+                img.rz72 src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+2}.jpg") alt=""
             tr
               td align="center"
                 p.lib

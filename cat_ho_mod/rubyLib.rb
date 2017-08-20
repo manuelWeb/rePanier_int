@@ -2,6 +2,7 @@
 require "nokogiri"
 require "open-uri"
 require "net/https"
+require "mini_magick"
 url  = "https://www.tempsl.fr/fr/"
 path = "xxx/xxx/xxx/"
 ext  = ".html"
@@ -68,7 +69,7 @@ output << varLib + "\n"
 output << varPri
 output.close
 
-cpti = 0
+cpti = 1
 ref.each {|i|
   puts i
   # get online image to save on src/FR/images
@@ -78,5 +79,21 @@ ref.each {|i|
       saved_file.write(read_file.read)
     end
   end
+  image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
+  # image.width | path | .format "png"
+  puts "images à resizer : #{image.resolution}"
+  # img("#{image.path}").write do |f|
+  #    f.quality = 40
+  # end 
+  # image.write "#{image.path}"
+  image.combine_options do |b|
+    b.resize "300x196>"
+    # b.blur "0x15"
+  end 
   cpti+=1
 }
+# image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
+# image.path #=> "input.jpg"
+# image.resolution "75"
+# image.resize "196x196"
+# image.resolution[10,10]
