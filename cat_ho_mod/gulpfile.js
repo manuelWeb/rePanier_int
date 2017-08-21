@@ -53,8 +53,8 @@ gulp.task('dev', function (cb) {
 })
 // exec rubyLib.rb
 var exec = require('child_process').exec
-
-exec('./rubyLib.rb', function (error, stdout, stderr) {
+console.log('Ruby is run ;)!!!')
+exec('ruby rubyLib.rb', function (error, stdout, stderr) {
   if (stdout) {
     console.log('RUBY: ' + stdout);
     // une fois les Lib + price recup on lance le CB
@@ -82,7 +82,7 @@ function errorLog(error) {
 // browser-sync task !attention il faut un index.html obligatoire
 gulp.task('browserSync', ['img','slim','sass','premailer'], function () {
   browserSync({
-    browser: 'firefox',
+    // browser: 'firefox',
     server: {
       baseDir: 'render/FR'
     }
