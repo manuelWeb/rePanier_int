@@ -1,13 +1,22 @@
+- $rassur_txt = ["0", "SATISFAIT OU<br />REMBOURSÉ", "LIVRAISON<br />À LA CARTE", "PAIEMENT<br />SÉCURISÉ", "GARANTIE<br />1 AN"]
 table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
   tr
     td.mob_d_none width="12"
     
-    td 
-      table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
+    td.pdt16
+      table.mobile_320 border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
         tr
-          / td.bds-3.cf.fz14  width="#{$column*3+$gutter*3}" height="46" align="center" bgcolor="#{$btnColor}"
-          - for i in 0..4
-            td.bds-3.cf.fz14  width="#{$column*3+$gutter*3}" height="46" align="center" bgcolor="#{$btnColor}"
+          td colspan="4" height="1" bgcolor==($btnColor)
+        tr
+          - for i in 1..4
+            td.pdt16 align="center" valign="top"
+              table border="0" cellpadding="0" cellspacing="0"
+                tr
+                  td.bds-3.cf.fz14  width="#{$column*3+$gutter*3}" height="46" align="center"
+                    img src==(($abspath == true ? $srcAbs : $srcRel)+"EltRassur#{i}.png")
+                tr
+                  td.pdt6 align="center"
+                    p.rassur == $rassur_txt[i]
             / puts i
 
     td.mob_d_none width="12"

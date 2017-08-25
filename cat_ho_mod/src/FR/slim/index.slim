@@ -2,7 +2,7 @@
 == Slim::Template.new('./src/FR/var/varLINK.slim').render
 == Slim::Template.new('./src/FR/var/_var-layout.slim').render
 == Slim::Template.new('./src/FR/var/varTXT.slim').render
-/ == Slim::Template.new('./src/FR/var/var.slim').render
+== Slim::Template.new('./src/FR/var/var_legal.slim').render
 - $abspath = false
 - $imgBGcondition = $abspath == true ? $srcAbs : $srcRel
 doctype transitional
@@ -72,6 +72,6 @@ html
       tr
         td valign="top"
           == Slim::Template.new('./src/FR/partial/_eltRassur.slim').render
-      / tr
-      /   td
-      /     == Slim::Template.new('./src/FR/partial/_foo_legal.slim').render
+      tr
+        td
+          == Slim::Template.new('./src/FR/partial/_mentions.slim').render
