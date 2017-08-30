@@ -6,7 +6,7 @@ require "mini_magick"
 url  = "https://www.tempsl.fr/fr/"
 path = "xxx/xxx/xxx/"
 ext  = ".html"
-ref = [ "1705110", "4204012", "3351111", "3801016"]
+ref = [ "1705110", "4204012", "3351111", "3801016", "6578017", "2205110", "3718319"]
 aryUrl = Array.new
 aryLib = Array.new
 aryPri = Array.new
@@ -63,11 +63,31 @@ txt = "_varPri << #{varPri} "
 txt = txt.encode('iso-8859-1')
 puts "#{txt}"
 
+cpt2 = 0
+varRef = ''
+ref.each{ |i|
+  if cpt2 == 0
+    # print "-$ref = ["
+    varRef += "- $ref = ["
+  end
+  # print '"' + i + '"'
+  varRef += '"' + i + '"'
+  if cpt2 < ref.length-1
+    # print ", "
+    varRef += ", "
+  end
+  cpt2+=1
+}
+varRef += "]"
+puts varRef
+
 # écriture _varLib.slim
 output = File.open( "src/FR/var/_varLib.slim","w" )
 output << varLib + "\n"
-output << varPri
+output << varPri + "\n"
+output << varRef + "\n"
 output.close
+
 
 cpti = 1
 ref.each {|i|
