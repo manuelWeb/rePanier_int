@@ -8,14 +8,11 @@
 / liens produits fin url dyn
 -$link = ["0", "#{$url}x/x/x/"]
 / index
--$index = "index.aspx"
-
-/ lien btn global pck
--$linkGlobalPckBtn = "https://www.tempsl.fr/fr/index.aspx"
-/ mentions
--$linkLegalUrl ="https://www.tempsl.fr/fr/index.aspx"
--$lcontact     ="https://www.tempsl.fr/fr/tempsl_et_vous/contact.aspx"
--$ldesabo      ="https://www.tempsl.fr/fr/animation/DesinscriptionNewsletter.aspx"
+-$index    = "index.aspx"
+-$panier   = "commande/panier.aspx"
+-$reassu   = "achat_confiance/garanties.aspx"
+-$lcontact = "tempsl_et_vous/contact.aspx"
+-$ldesabo  = "animation/DesinscriptionNewsletter.aspx"
 
 / tracking google
 - $goTk = {###,
@@ -24,7 +21,8 @@
 / "#{$url}#{$index}#{$goTk[:p1]}#{$utmcont[0]}#{$campaign}"
 - $campaign = "&utm_campaign=#{$campagne}"
 - univers = ["univ_C", "univ_ER", "univ_SB", "univ_MD", "univ_L", "univ_VA", "univ_BA"]
-- $utmcont =["logo", "compte", univers, "btn_retrouver", "visuel", "accroche", "prix", "btn_valider", "garantie", "livraison", "paiement", "contact", "desabo"]
+- reassur = ["garantie", "livraison", "paiement", "garantie"]
+- $utmcont =["logo", "compte", univers, "btn_retrouver", "visuel", "accroche", "prix", "btn_valider", reassur, "contact", "desabo"]
 
 / - $utmLegalUrl     = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[6]+$utm[3]+$utmtxt[2]
 / - $utmLegalContact = "?val=A&utm_source=NL&utm_medium=email&utm_content=contact"+$utm[3]+$utmtxt[2]

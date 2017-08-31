@@ -38,13 +38,13 @@ table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="c
 
 
         == $contact[:s1]
-        a href==$lcontact target="_blank" style="color:#333333;text-decoration:underline;"
+        a href==("#{$url}#{$lcontact}#{$goTk[:p1]}#{$utmcont[9]}#{$campaign}") target="_blank" style="color:#333333;text-decoration:underline;"
           strong
             == $contact[:s2]
         |.
         br
         == $desabo[:s1]
-        a href==$ldesabo target="_blank" style="color:#333333;text-decoration:underline;"
+        a href==("#{$url}#{$ldesabo}#{$goTk[:p1]}#{$utmcont[10]}#{$campaign}") target="_blank" style="color:#333333;text-decoration:underline;"
           == $desabo[:s2]
         |. 
         br
