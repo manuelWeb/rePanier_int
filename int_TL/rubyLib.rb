@@ -6,7 +6,8 @@ require "mini_magick"
 url  = "https://www.tempsl.fr/fr/"
 path = "xxx/xxx/xxx/"
 ext  = ".html"
-ref = [ "1705110", "4204012", "3351111", "3801016", "6578017", "2205110", "3718319"]
+# , "3801016", "6578017", "2205110", "3718319"
+ref = [ "1705110", "4204012", "3351111"]
 aryUrl = Array.new
 aryLib = Array.new
 aryPri = Array.new

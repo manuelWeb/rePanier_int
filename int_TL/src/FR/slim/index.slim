@@ -55,24 +55,30 @@ html
 
   body bgcolor="#FFFFFF" vlink="#000000" link="#000000" style="margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100%;"
     table.mobile_320 width="100%" border="0" cellpadding="0" cellspacing="0"
+      /! Pre-Header Bjr Mme + lien version en ligne
       tr
         td
           == Slim::Template.new('./src/FR/partial/_header_doc.slim').render
+      /! Header Logo + cpt
       tr
         td valign="top"
-          == Slim::Template.new('./src/FR/partial/_header.slim').render
+          == Slim::Template.new('./src/FR/partial/_headWrp.slim').render
+      /! Intro : Votre panier...+ paragraphe + btn + image
       tr
         td valign="top"
           == Slim::Template.new('./src/FR/partial/_accroche.slim').render
+      /! Actuellement ds votre panier + produits
       tr
         td valign="top"
           == Slim::Template.new('./src/FR/partial/_pkWrp.slim').render
+      /! Bouton > Je valide ce panier
       tr
         td valign="top"
-          == Slim::Template.new('./src/FR/partial/_caltoact.slim').render
+          == Slim::Template.new('./src/FR/partial/_btnValidePanier.slim').render
+      /! Footer éléments de réassurances
       tr
         td valign="top"
-          == Slim::Template.new('./src/FR/partial/_eltRassur.slim').render
+          == Slim::Template.new('./src/FR/partial/_eltReassur.slim').render
       tr
         td
           == Slim::Template.new('./src/FR/partial/_mentions.slim').render
