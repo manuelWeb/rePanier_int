@@ -70,8 +70,8 @@ varNbpk = ''
 varRef  = ''
 ref.each{ |i|
   if cpt2 == 0
-    varNbpk += "- $nbpk = ["
-    varRef += "- $ref = ["
+    varNbpk += "- $nbpk   = ["
+    varRef += "- $ref    = ["
   end
   # varNbpk += '"' + cpt2 + '"'
   varNbpk += (cpt2+1).to_s
@@ -88,12 +88,11 @@ puts varRef
 
 # écriture _varLib.slim
 output = File.open( "src/FR/var/_varLib.slim","w" )
+output << varNbpk + "\n"
 output << varLib + "\n"
 output << varPri + "\n"
-output << varNbpk + "\n"
 output << varRef + "\n"
 output.close
-
 
 cpti = 1
 ref.each {|i|
