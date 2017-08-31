@@ -12,17 +12,17 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
           table border="0" cellpadding="0" cellspacing="0"
             tr
               td.pdb16 align="center" width="#{$column*6+$gutter*5}"
-                a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[4]}#{$campaign}") target="_blank"
+                a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[4]}_#{cpt+1}#{$campaign}") target="_blank"
                   img.rz72 src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+1}.jpg") alt=""
             tr
               td align="center"
                 p.lib
-                  a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[5]}#{$campaign}") target="_blank"
+                  a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[5]}_#{cpt+1}#{$campaign}") target="_blank"
                     | #{$putLib[cpt]}
             tr
               td align="center"
                 p.price
-                  a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[6]}#{$campaign}") target="_blank"
+                  a href==("#{$link[1]}#{$ref[cpt]}.html#{$goTk[:p1]}#{$utmcont[6]}_#{cpt+1}#{$campaign}") target="_blank"
                     | #{$putPri[cpt]}
         td.mob_d_none width="#{$gutter}"
           / | #{cpt} |  && $ref.length <= $nbpk.length
@@ -31,17 +31,17 @@ table.mobile_300 width="612" border="0" cellpadding="0" cellspacing="0" align="c
             table border="0" cellpadding="0" cellspacing="0"
               tr
                 td.pdb16 align="center" width="#{$column*6+$gutter*5}"
-                  a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[4]}#{$campaign}") target="_blank"
+                  a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[4]}_#{cpt+2}#{$campaign}") target="_blank"
                     img.rz72 src==(($abspath == true ? $srcAbs : $srcRel)+"pk#{cpt+2}.jpg") alt=""
               tr
                 td align="center"
                   p.lib
-                    a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[5]}#{$campaign}") target="_blank"
+                    a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[5]}_#{cpt+2}#{$campaign}") target="_blank"
                       | #{$putLib[cpt+1]}
               tr
                 td align="center"
                   p.price
-                    a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[6]}#{$campaign}") target="_blank"
+                    a href==("#{$link[1]}#{$ref[cpt+1]}.html#{$goTk[:p1]}#{$utmcont[6]}_#{cpt+2}#{$campaign}") target="_blank"
                       | #{$putPri[cpt+1]}
     tr
       td height="12"

@@ -3,7 +3,7 @@
 == Slim::Template.new('./src/FR/var/_var-layout.slim').render
 == Slim::Template.new('./src/FR/var/varTXT.slim').render
 == Slim::Template.new('./src/FR/var/var_legal.slim').render
-- $abspath      = false
+- $abspath      = true
 - $legalService = true
 - $imgBGcondition = $abspath == true ? $srcAbs : $srcRel
 doctype transitional
