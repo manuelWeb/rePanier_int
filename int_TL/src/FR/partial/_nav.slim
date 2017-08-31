@@ -1,5 +1,6 @@
 - counter1 = [1,2,3,4]; counter2 = [5,6,7]; tdwidth = [71,95,73,82,66,102,80]
 - itemsuniv = ["CUISINE", "ENTRETIEN &<br />RANGEMENT", "SANTE &<br />BEAUTE", "MAISON &<br />DECO", "LOISIRS", "VETEMENTS &<br />ACCESSOIRES", "BONNES<br />AFFAIRES"]
+- univLk = ["cuisine"+"/Univers.html", "entretien-rangement"+"/Univers.html", "sante-beaute"+"/Univers.html", "maison-deco"+"/Univers.html", "loisirs"+"/Univers.html", "vetements-accessoires"+"/Univers.html", "bonnes-affaires"+"/Univers.html"]
 tr
   td valign="middle" height="42"
     table border="0" cellpadding="0" cellspacing="0"
@@ -10,7 +11,7 @@ tr
               - cp=0
               - counter1.each {|i|
               td.mob_24.pdt6.pdb6.nav.bds-3.fs10 width==("#{tdwidth[i-1]}") align="center"
-                a href==("#{$url}forme-bien-etre/Univers.html?") target="_blank"
+                a href==("#{$url}#{univLk[cp]}#{$goTk[:p1]}#{$utmcont[2][cp]}#{$campaign}") target="_blank"
                   == "#{itemsuniv[i-1]}"
               - if cp <= 2
                 td.w3 width="7"
@@ -25,15 +26,15 @@ tr
               - counter2.each {|i|
               - if cp <= 1
                 td.mob_32_4.pdt6.pdb6.nav.bds-3.fs10 width==("#{tdwidth[i-1]}") align="center"
-                  a href==("#{$url}forme-bien-etre/Univers.html?") target="_blank"
+                  a href==("#{$url}#{univLk[i-1]}#{$goTk[:p1]}#{$utmcont[2][i-1]}#{$campaign}") target="_blank"
                     == "#{itemsuniv[i-1]}"
                 - if cp <= 0
                   td.w3 width="7"
                 - if cp == 1
                   td.w3 width="8"
               - else
-                td.mob_33_4.pdt6.pdb6.fs10.nav.bds-3-ba width==("#{tdwidth[i-1]}") align="center"
-                  a href==("#{$url}forme-bien-etre/Univers.html?") target="_blank"
+                td.mob_33_4.pdt6.pdb6.fs10.nav.bds-3-ba.fwb bgcolor="#FEFB02" width==("#{tdwidth[i-1]}") align="center"
+                  a href==("#{$url}#{univLk[i-1]}#{$goTk[:p1]}#{$utmcont[2][i-1]}#{$campaign}") target="_blank"
                     == "#{itemsuniv[i-1]}"
               -cp += 1
               - }

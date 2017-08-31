@@ -1,12 +1,15 @@
 / $date=month+year;campaign
 -$date = "0917"
--$campagne = "#{$date}_relancepanier"
+-$campagne = "relance_panier"
 
 -$url = "https://www.tempsl.fr/fr/"
-/ lien header "version en ligne"
--$link_header = "https://tempsl.com/NewsLettersID/FR/rpanier_#{$date}/index.html"
-/ liens ligne1 pck1-2-3sur3
+/ lien header miroir "version en ligne"
+-$link_header = "https://tempsl.com/Newsletters/miroir/Relance_panier_#{$date}/FR/index.htm"
+/ liens produits fin url dyn
 -$link = ["0", "#{$url}x/x/x/"]
+/ index
+-$index = "index.aspx"
+
 / lien btn global pck
 -$linkGlobalPckBtn = "https://www.tempsl.fr/fr/index.aspx"
 / mentions
@@ -14,16 +17,15 @@
 -$lcontact     ="https://www.tempsl.fr/fr/tempsl_et_vous/contact.aspx"
 -$ldesabo      ="https://www.tempsl.fr/fr/animation/DesinscriptionNewsletter.aspx"
 
+/ tracking google
+- $goTk = {###,
+  p1: "?utm_source=NL&utm_medium=email&utm_content=",
+}
+/ "#{$url}#{$index}#{$goTk[:p1]}#{$utmcont[0]}#{$campaign}"
+- $campaign = "&utm_campaign=#{$campagne}"
+- univers = ["univ_C", "univ_ER", "univ_SB", "univ_MD", "univ_L", "univ_VA", "univ_BA"]
+- $utmcont =["logo", "compte", univers, "btn_retrouver", "visuel", "accroche", "prix", "btn_valider", "garantie", "livraison", "paiement", "contact", "desabo"]
 
-/ compil var > ne pas modifier (sauf chgmnt radical de tracking)
-- $utm    = ["?utm_source=","&utm_medium=","&utm_content=","&utm_campaign="]
-- $utmtxt = ["NL","email",$campagne];$utmcont =["pdt","btn","csoa","cmc","btnKdo","BtnGlobPck","url"]
-- $utmPdt          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[0]+$utm[3]+$utmtxt[2]
-- $utmBtn          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[1]+$utm[3]+$utmtxt[2]
-- $utmCsa          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[2]+$utm[3]+$utmtxt[2]
-- $utmCmc          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[3]+$utm[3]+$utmtxt[2]
-- $utmBtnKdo       = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[4]+$utm[3]+$utmtxt[2]
-- $utmBtnGlobPck   = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[5]+$utm[3]+$utmtxt[2]
-- $utmLegalUrl     = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[6]+$utm[3]+$utmtxt[2]
-- $utmLegalContact = "?val=A&utm_source=NL&utm_medium=email&utm_content=contact"+$utm[3]+$utmtxt[2]
-- $utmLegalDesabo  = "?utm_source=NL&utm_medium=email&utm_content=desabo"+$utm[3]+$utmtxt[2]
+/ - $utmLegalUrl     = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[6]+$utm[3]+$utmtxt[2]
+/ - $utmLegalContact = "?val=A&utm_source=NL&utm_medium=email&utm_content=contact"+$utm[3]+$utmtxt[2]
+/ - $utmLegalDesabo  = "?utm_source=NL&utm_medium=email&utm_content=desabo"+$utm[3]+$utmtxt[2]
