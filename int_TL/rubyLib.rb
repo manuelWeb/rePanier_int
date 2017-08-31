@@ -64,21 +64,25 @@ txt = "_varPri << #{varPri} "
 txt = txt.encode('iso-8859-1')
 puts "#{txt}"
 
-cpt2 = 0
-varRef = ''
+# create ref array + ary nbpk
+cpt2    = 0
+varNbpk = ''
+varRef  = ''
 ref.each{ |i|
   if cpt2 == 0
-    # print "-$ref = ["
+    varNbpk += "- $nbpk = ["
     varRef += "- $ref = ["
   end
-  # print '"' + i + '"'
+  # varNbpk += '"' + cpt2 + '"'
+  varNbpk += (cpt2+1).to_s
   varRef += '"' + i + '"'
   if cpt2 < ref.length-1
-    # print ", "
+    varNbpk += ", "
     varRef += ", "
   end
   cpt2+=1
 }
+varNbpk += "]"
 varRef += "]"
 puts varRef
 
@@ -86,6 +90,7 @@ puts varRef
 output = File.open( "src/FR/var/_varLib.slim","w" )
 output << varLib + "\n"
 output << varPri + "\n"
+output << varNbpk + "\n"
 output << varRef + "\n"
 output.close
 
