@@ -8,6 +8,7 @@ path = "xxx/xxx/xxx/"
 ext  = ".html"
 #, "2205110", "3718319"
 ref = [ "1705110", "4204012", "3351111" , "3801016", "6578017"]
+
 aryUrl = Array.new
 aryLib = Array.new
 aryPri = Array.new
@@ -21,6 +22,7 @@ aryUrl.each {|i|
   aryLib.push( Nokogiri::HTML(open(i,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LB_TITRE_PRODUIT").text.encode('iso-8859-1'))
   aryPri.push( Nokogiri::HTML(open(i,  :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)).at_css("#ctl00_ContentPlaceHolder1_LAB_PRIX_PRODUIT").text.encode('iso-8859-1'))
 }
+
 # hash lib
 cpt = 0
 varLib = ''
@@ -41,7 +43,6 @@ varLib += "]"
 txt = "_varLib << #{varLib} "
 txt = txt.encode('iso-8859-1')
 puts "#{txt}"
-
 
 # hash price
 cptPri = 0
@@ -95,27 +96,41 @@ output << varRef + "\n"
 output.close
 
 cpti = 1
+
+# ref.each {|i|
+#   puts "########### i_OnTop:#{i} ##################"
+# }
+
 ref.each {|i|
-  puts i
+  puts "########### i_OnTop:#{i} ##################"
   # get online image to save on src/FR/images
   File.open("src/FR/images/pk#{cpti}.jpg", "wb") do |saved_file|
+    print "open ?:pk#{cpti}!!!!!!!!!!!!! "
     # the following "open" is provided by open-uri
     open("https://www.tempsl.fr/Visuels/Produits/zoom/#{i}_WEB1.jpg", "rb") do |read_file|
+      # print "saved_file:#{i}_WEB1.jpg!!!!!!!!!!!!! "
       saved_file.write(read_file.read)
     end
   end
+
   image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
+  print "image à resizer::#{image} path::#{image.path} path::#{image.path} "
+
+  # print "image à resizer::#{image} w::#{image.dimensions} "
+  # print "image à resizer : #{image.dimensions}, img.path:#{image.path} "
+
   # image.width | path | .format "png" | resolution
-  puts "images à resizer : #{image.dimensions}"
+  # puts "images à resizer : #{image.dimensions}, img.path:#{image.path} "
+
   # image.crop "300x196+0+0"
   # image.colorspace "Gray"
-  image.write "#{image.path}"
-  image.combine_options do |b|
-    b.resize "300x196>"
-    b.quality "100" # 86 = q:79 fw info
-    # b.depth "7"
-    # b.blur "0x15"
-  end 
+  # image.write "#{image.path}"
+  # image.combine_options do |b|
+  #   b.resize "300x196>"
+  #   b.quality "100" # 86 = q:79 fw info
+  #   # b.depth "7"
+  #   # b.blur "0x15"
+  # end
   cpti+=1
 }
 # image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
