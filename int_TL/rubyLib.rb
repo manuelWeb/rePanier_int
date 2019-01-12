@@ -113,24 +113,21 @@ ref.each {|i|
     end
   end
 
+  # ATTENTION CHECK convert -version IN CLI -> image.width | path | .format "png" | resolution
   image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
-  print "image à resizer::#{image} path::#{image.path} path::#{image.path} "
-
-  # print "image à resizer::#{image} w::#{image.dimensions} "
-  # print "image à resizer : #{image.dimensions}, img.path:#{image.path} "
-
-  # image.width | path | .format "png" | resolution
+  # print "image à resizer::#{image} path::#{image.path} width::#{image.width} "
+  print "image à resizer::#{image} w::#{image.dimensions} "
   # puts "images à resizer : #{image.dimensions}, img.path:#{image.path} "
 
   # image.crop "300x196+0+0"
   # image.colorspace "Gray"
-  # image.write "#{image.path}"
-  # image.combine_options do |b|
-  #   b.resize "300x196>"
-  #   b.quality "100" # 86 = q:79 fw info
-  #   # b.depth "7"
-  #   # b.blur "0x15"
-  # end
+  image.write "#{image.path}"
+  image.combine_options do |b|
+    b.resize "300x196>"
+    b.quality "100" # 86 = q:79 fw info
+    # b.depth "7"
+    # b.blur "0x15"
+  end
   cpti+=1
 }
 # image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
