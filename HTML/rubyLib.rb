@@ -7,7 +7,7 @@ url  = "https://www.tempsl.fr/fr/"
 path = "xxx/xxx/xxx/"
 ext  = ".html"
 #, "2205110", "3718319"
-ref = [ "1705110", "4204012", "3351111" , "3801016", "6578017"]
+ref = [ "1705110", "4204012", "3351111" , "2540029", "6578017"]
 
 aryUrl = Array.new
 aryLib = Array.new
@@ -108,7 +108,7 @@ ref.each {|i|
     print "open ?:pk#{cpti}!!!!!!!!!!!!! "
     # the following "open" is provided by open-uri
     open("https://www.tempsl.fr/Visuels/Produits/zoom/#{i}_WEB1.jpg", "rb") do |read_file|
-      # print "saved_file:#{i}_WEB1.jpg!!!!!!!!!!!!! "
+      print "saved_file:#{i}_WEB1.jpg!!!!!!!!!!!!! "
       saved_file.write(read_file.read)
     end
   end
@@ -116,18 +116,26 @@ ref.each {|i|
   # ATTENTION CHECK convert -version IN CLI -> image.width | path | .format "png" | resolution
   image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
   # print "image à resizer::#{image} path::#{image.path} width::#{image.width} "
-  print "image à resizer::#{image} w::#{image.dimensions} "
+  # print "image à resizer::#{image} w::#{image.dimensions} "
   # puts "images à resizer : #{image.dimensions}, img.path:#{image.path} "
 
-  # image.crop "300x196+0+0"
-  # image.colorspace "Gray"
-  image.write "#{image.path}"
+  # # image.crop "300x196+0+0"
+  # # image.colorspace "Gray"
+  # image.write "#{image.path}"
+  # image.combine_options do |b|
+  #   b.resize "300x196>"
+  #   b.quality "100" # 86 = q:79 fw info
+  #   # b.depth "7"
+  #   # b.blur "0x15"
+  # end
+
   image.combine_options do |b|
-    b.resize "300x196>"
+    b.resize "600x400"
     b.quality "100" # 86 = q:79 fw info
     # b.depth "7"
     # b.blur "0x15"
   end
+
   cpti+=1
 }
 # image = MiniMagick::Image.new("src/FR/images/pk#{cpti}.jpg")
