@@ -1,0 +1,55 @@
+table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
+  tr
+    td.mob_d_none width="12"
+
+    td.pdt24.pdb16 valign="top"
+      p.lh-150.legal
+        - if $legalService == true
+          u == $service[:s1]
+          br
+          == $service[:s2]
+          strong
+            == $service[:s3]
+          == $service[:s4] 
+          br
+          == $service[:s5] 
+          strong
+            == $service[:s6] 
+          == $service[:s7] 
+          br
+          == $service[:s8] 
+          strong
+            == $service[:s9] 
+          == $service[:s10]    
+          br
+          br
+        
+        - if $ModOffre == true
+          == $ModOffre[:s0]
+          u 
+            strong == $ModOffre[:s1]
+          br
+          == $ModOffre[:s2]
+          == $ModOffre[:s3]
+          == $ModOffre[:s4]
+          == $ModOffre[:s5]
+          br
+          br
+
+
+        == $contact[:s1]
+        a href==("#{$url}#{$lcontact}#{$goTk[:p1]}#{$utmcont[9]}#{$campaign}") target="_blank" style="color:#333333;text-decoration:underline;"
+          strong
+            == $contact[:s2]
+        |.
+        br
+        == $desabo[:s1]
+        a href==("#{$url}#{$ldesabo}#{$goTk[:p1]}#{$utmcont[10]}#{$campaign}") target="_blank" style="color:#333333;text-decoration:underline;"
+          == $desabo[:s2]
+        |. 
+        br
+        == $desabo[:s3]
+        br
+        == $domSas[:s1]
+
+    td.mob_d_none width="12"

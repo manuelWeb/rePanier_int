@@ -1,0 +1,42 @@
+table.mobile_320 width="636" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;"
+  tr
+    td.mob_d_none width="12"
+    td valign="bottom"
+      table border="0" cellpadding="0" cellspacing="0"
+        tr
+          td.mob_d_b.pdt24.pdb12
+            table border="0" cellpadding="0" cellspacing="0"
+              tr
+                td.mob_nopd width="#{$column*7+$gutter*6}"
+                  table border="0" cellpadding="0" cellspacing="0"
+                    tr
+                      td.pdb16
+                        img.cent src==(($abspath == true ? $srcAbs : $srcRel)+"s3c1s1_accTitle.png") alt=""
+                    tr
+                      td.pdb16
+                        / span==$putLib[0]
+                        p.accTxt align="left"
+                          b
+                            | Bonjour &lt;Mme | Mr #Unnomsuperlong&gt;,<br />
+                          | Vous avez récemment visité notre site et créé votre panier sur 
+                          a href==("#{$url}#{$index}#{$goTk[:p1]}#{$utmcont[11]}#{$campaign}") target="_blank"
+                            | www.tempsl.fr
+                          | .<br />Celui-ci a été sauvegardé pour faciliter votre commande. Vous pouvez le consulter puis valider votre panier. Il reste accessible durant quelques jours seulement !<br />À tout de suite sur 
+                          a href==("#{$url}#{$index}#{$goTk[:p1]}#{$utmcont[11]}#{$campaign}") target="_blank"
+                            | www.tempsl.fr
+                          |  !
+                    tr
+                      td.mob_tal align="center"
+                        table border="0" cellpadding="0" cellspacing="0"
+                          tr
+                            td.pdl24.pdr24.bds-3.vam height="46" bgcolor="#{$btnColor}"
+                              p
+                                a.cf.tdn.fz16 href==("#{$url}#{$panier}#{$goTk[:p1]}#{$utmcont[3]}#{$campaign}") target="_blank"
+                                  | > Je retrouve mon panier !
+                td width="12"
+                td.mob_d_none.mob_nopd valign="top" width==($column*2+$gutter*1) align="left"
+                  a href==("#{$url}#{$panier}#{$goTk[:p1]}#{$utmcont[3]}#{$campaign}") target="_blank"
+                    img src==(($abspath == true ? $srcAbs : $srcRel)+"s3c2_accVisu.jpg") alt=""
+        
+    td.mob_d_none width="12"
+

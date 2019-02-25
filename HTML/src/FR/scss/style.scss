@@ -1,0 +1,74 @@
+// img { display: block; line-height: normal; }
+.vam { vertical-align: middle; }
+.nav {
+  @extend .vam;
+  line-height: normal; font-size: 12px; font-weight: normal; font-family: Arial, Helvetica, sans-serif;
+  background-color: #F9D5E1;
+}
+.fwb {font-weight: bold;}
+.bds-3 {
+  border-radius: 3px;
+}
+.fz12 {
+  font-size: 12px;
+}
+.fz14 {
+  font-size: 14px;
+}
+.fz16 {
+  font-size: 16px;
+}
+.cf {
+  color: #FFFFFF;
+}
+.tdn {text-decoration: none;}
+td {
+  p {
+    margin: 0; padding: 0;
+    line-height: normal; font-family: Verdana, Geneva, sans-serif;
+  }
+  img { display: block; line-height: normal; }
+}
+.nav-ba {
+  @extend .nav;
+  font-weight: bold;
+  background-color: #FFFF00;
+}
+@mixin pdt($val) {padding-top: $val + px; }
+@mixin pdr($val) {padding-right: $val + px; }
+@mixin pdb($val) {padding-bottom: $val + px; }
+@mixin pdl($val) {padding-left: $val + px; }
+.bgcf { background-color: #FFFFFF;}
+.bgcc { background-color: #CCCCCC;}
+.bgce { background-color: #EEEEEE;}
+// padding
+.pdt6  {@include pdt(6) }
+.pdt10 {@include pdt(10)}
+.pdt16 {@include pdt(16)}
+.pdt24 {@include pdt(24)}
+.pdr10 {@include pdr(10)}
+.pdr24 {@include pdr(24)}
+.pdb6  {@include pdb(6) }
+.pdb12 {@include pdb(12)}
+.pdb16 {@include pdb(16)}
+.pdl10 {@include pdl(10)}
+.pdl24 {@include pdl(24)}
+
+.nav a { color: #FF0066; text-decoration: none; }
+.accTxt { line-height: 24px; font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #444544; }
+.lib {
+  font-size: 16px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #444444;
+  a {
+    color: #444444;
+    text-decoration: none;
+  }
+}
+.price {
+  font-size: 21px; font-weight: bold; font-family:  Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #E1134C;
+  a {
+    color: #E1134C;
+    text-decoration: none;
+  }
+}
+.rassur { font-size: 12px; font-weight: bold; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #212121; text-align: center; }
+.legal {font-family:Verdana, Geneva, sans-serif; font-size: 11px; color: #555555; margin: 0; text-align: justify;}

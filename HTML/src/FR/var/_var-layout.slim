@@ -1,0 +1,19 @@
+/  lancer la compile : slimrb -p template-CV.V3.html.slim template-CV.V3.html; html safe => .html_safe
+- $srcRel = "images/"
+- $srcAbs = "https://tempsl.com/Newsletters/miroir/Relance_panier_#{$date}/FR/images/"
+- $srcAbs = "http://webdesignord.fr/domoti/TL/images/"
+/ layout numeric
+- $tabArray  = [612]
+- $pad_ext   = 12; $column = 40; $gutter = 12
+- $tab1      = $tabArray[0] + (2 * $pad_ext);
+- $fullwidth = ($column*12)+($gutter*11)
+/ layout txt
+- $db = 'display: block;'; $pt = 'padding-top: '; $pr = 'padding-right: '; $pb = 'padding-bottom: '; $pl = 'padding-left: '; $tabborder0 = '0" cellpadding="0" cellspacing="0'
+/ color
+- $primaryColor     = "#FF0066" # light blue
+- $primaryColorDark = "#081623" # dark blue
+- $secondaryColor   = "#FF6600" # orange
+- $bgcolor          = "#F9F1F1" # light gray
+- $guideColor1      = "#F9F1F1" # light gray
+- $guideColor2      = "#F9F1F1" # light gray
+- $btnColor         = "#FF0064" # light blue

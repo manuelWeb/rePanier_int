@@ -1,0 +1,13 @@
+tr
+  td.mob_d_b.pdb16 valign="middle"
+    table.mobile_320 border="0" cellpadding="0" cellspacing="0"
+      tr
+        / desk device : padding-left: 4 column + 4 gutter
+        / (208 pad + 196 logo = )
+        td.mob_nopd align="left" style="padding-left: #{$column*4+$gutter*4}px;"
+          a href==("#{$url}#{$index}#{$goTk[:p1]}#{$utmcont[0]}#{$campaign}") target="_blank"
+           img src==(($abspath == true ? $srcAbs : $srcRel)+"s1c1_logo.png") alt=""
+        / desk device : ( 116 pad + 92 cpt = 208)
+        td.mob_nopd width==($column*2+$gutter*1) align="left" style="padding-left: #{$column*2+$gutter*3}px;"
+          a href==("#{$url}#{$cpt}#{$goTk[:p1]}#{$utmcont[1]}#{$campaign}") target="_blank"
+           img src==(($abspath == true ? $srcAbs : $srcRel)+"s1c2_cpt.png") alt=""

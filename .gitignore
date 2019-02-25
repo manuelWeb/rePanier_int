@@ -1,1 +1,3 @@
-cat_ho_mod/render/*
+HTML/render
+.DS_Store
+desktop.ini
