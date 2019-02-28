@@ -25,7 +25,7 @@ rm -rf remote_alias && ln -s '/Volumes/service internetArchives$/NEWSLETTERS/TRI
 
 ## Color
 
-<table>
+<table style="display: table;" >
   <tr>
     <td>Primary</td>
     <td>Secondary</td>
@@ -40,15 +40,27 @@ rm -rf remote_alias && ln -s '/Volumes/service internetArchives$/NEWSLETTERS/TRI
 
 ## main nav item
 
-<table>
+<style>
+.markdown-body table.nav tr {background-color: transparent !important; }
+.markdown-body table.nav tr td {text-align: center; padding: 0; }
+.markdown-body table.nav tr td > table tr td:last-child { font-weight: bold; background-color: #FFFF00; }
+</style>
+
+<table class="nav" border="0" cellpadding="0" cellspacing="0" style="display: table; " >
   <tr>
-    <td>CUISINE</td> 
-    <td>ENTRETIEN &<br />RANGEMENT</td> 
-    <td>SANTE &<br />BEAUTE</td> 
-    <td>MAISON &<br />DECO</td> 
-    <td>LOISIRS</td> 
-    <td>VETEMENTS &<br />ACCESSOIRES</td> 
-    <td>BONNES<br />AFFAIRES</td>
+    <td bgcolor="#F9D5E1" >
+      <table border="0" cellpadding="0" cellspacing="0" height="50" style="display: table; margin-bottom: 0; color: #FF0054 !important;" >
+        <tr>
+          <td>CUISINE</td> 
+          <td>ENTRETIEN &<br />RANGEMENT</td> 
+          <td>SANTE &<br />BEAUTE</td> 
+          <td>MAISON &<br />DECO</td> 
+          <td>LOISIRS</td> 
+          <td>VETEMENTS &<br />ACCESSOIRES</td> 
+          <td>BONNES<br />AFFAIRES</td>
+        </tr>
+      </table>
+    </td>
   </tr>
 </table>
 
@@ -65,3 +77,12 @@ const txtAry = Array.from(document.querySelectorAll('.nav a'))
 txtAry.map( (i) => console.log( i.innerHTML.replace(/&amp;/g,'&') ) )
 ```
 
+
+## Surcharge markdown style
+
+<style>
+.markdown-body {
+  max-width: 100%;
+  min-width: 300px;
+}
+</style>
